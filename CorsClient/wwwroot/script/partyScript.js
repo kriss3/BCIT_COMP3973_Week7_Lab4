@@ -13,15 +13,13 @@
 				var party = '';
 				$('#party_table tbody').empty();
 				$.each(data, function (key, value) {
-
-					
 					
 					party += '<tr>';
 					party += '<td>' + value.partyName + '</td>';
 					party += '<td>' + getMyDate(value.partyDate); + '</td>';
 					party += '<td>' + value.expectedNumberOfGuests + '</td>';
 					party += '<td>' + value.location + '</td>';
-					party += '<td>' + '<button class="btn btn-default" id="btnDel">Delete ('+value.partyId+')</button>' +'</td>';
+					party += '<td>' + '<button class="btn btn-default" id="btnDel">Delete: '+value.partyId+'</button>' +'</td>';
 					party += '</tr>';
 					
 				});
@@ -74,5 +72,22 @@
 		return day + '/' + month + '/' + year;
 	}
 
+	$("#party_table").on("click", "button#btnDel", function () {
+		var id = $(this).text().substr(8);
+		alert("About to remove Record with Id: " + id);
 
+		//Call API
+		var url = "https://localhost:44343/api/parties/";
+		$.ajax({
+			contentType: 'application/json',
+			type: 'DELETE',
+			url: url + id,
+			success: function (d) {
+				alert("Record with Id: " + d.partyId + " removed succesful. Refresh table.");
+			},
+			error: function (d) {
+				alert("Error removing record: " + JSON.stringify(d));
+			}
+		});
+	});
 });
