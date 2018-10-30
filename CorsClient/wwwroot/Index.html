@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>CORS CLIENT</title>
+	<script src="lib/jquery/jquery.min.js"></script>
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+	<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="script/myScript.js"></script>
+</head>
+<body>
+	<h3>Cors Request</h3>
+	<button id="btnGetPatients" class="btn btn-default">Get Patients</button>
+	<div id="preOutput">	</div>
+	<hr />
+	<button id="btnGetAlert" class="btn btn-default">Get Alert</button>
+	<div id="myForm"></div>
+	<!--<pre id="preOutput"></pre> -->
+	<hr />
+	<div class="container">
+		<form name="postform" id="postform" class="form-horizontal">
+			<div class="form-group">
+				<label class="text-info">Patient Name:</label>
+				<input type="text" id="txtPatientName" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label class="text-info">Ailment Name:</label>
+				<input type="text" id="txtAilmentName1" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label class="text-info">Ailment Name:</label>
+				<input type="email" id="txtAilmentName2" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label class="text-info">Medication:</label>
+				<input type="text" id="txtMedication1" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label class="text-info">Dose:</label>
+				<input type="number" id="txtDose1" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label class="text-info">Medication:</label>
+				<input type="text" id="txtMedication2" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label class="text-info">Dose:</label>
+				<input type="text" id="txtDose2" class="form-control" />
+			</div>
+			<button type="submit" class="btn btn-default">Save</button>
+		</form>
+	</div>
+	<div id="postResult">Will be replaced with API Call results</div>
+</body>
+</html>

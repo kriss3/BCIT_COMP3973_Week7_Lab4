@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiHealth", "WebApiHealth\WebApiHealth.csproj", "{FF2E8D3E-6BF8-4F6A-8CDC-DA177F1510B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CorsClient", "CorsClient\CorsClient.csproj", "{8F31A2E6-9D4E-41A0-9FB5-F609ADC25A80}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiHealth", "WebApiHealth\WebApiHealth.csproj", "{0B86362A-2C30-4918-AAEB-98A82D51C48A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FF2E8D3E-6BF8-4F6A-8CDC-DA177F1510B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF2E8D3E-6BF8-4F6A-8CDC-DA177F1510B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF2E8D3E-6BF8-4F6A-8CDC-DA177F1510B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF2E8D3E-6BF8-4F6A-8CDC-DA177F1510B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F31A2E6-9D4E-41A0-9FB5-F609ADC25A80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F31A2E6-9D4E-41A0-9FB5-F609ADC25A80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F31A2E6-9D4E-41A0-9FB5-F609ADC25A80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F31A2E6-9D4E-41A0-9FB5-F609ADC25A80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B86362A-2C30-4918-AAEB-98A82D51C48A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B86362A-2C30-4918-AAEB-98A82D51C48A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B86362A-2C30-4918-AAEB-98A82D51C48A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B86362A-2C30-4918-AAEB-98A82D51C48A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

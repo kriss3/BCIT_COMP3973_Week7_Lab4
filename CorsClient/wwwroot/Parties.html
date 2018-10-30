@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<script src="lib/jquery/jquery.min.js"></script>
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+	<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="script/partyScript.js"></script>
+	<title>Parties CLIENT</title>
+</head>
+<body>
+	<h3 class="jumbotron">Cors Request - PARTY CONTROLLER and LIST</h3>
+	<hr />
+	<div class="container">
+		<button id="btnGetPartiesTbl" class="btn btn-default">Get Parties</button>
+		<button id="btnAddPart" class="btn btn-default" data-toggle="modal" data-target="#myModal">New Party</button>
+
+		<table id="party_table" class="table table-striped">
+			<thead>
+				<tr>
+					<th>Party Name</th>
+					<th>Party Date</th>
+					<th>No. of Guests</th>
+					<th>Location</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	
+		<div id="myModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+				<!-- Modal Form to Add new Party to the database-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Add New Party</h4>
+					</div>
+					<div class="modal-body">
+						<form name="postform" id="postform" class="form-horizontal">
+							<div class="form-group-sm">
+								<label class="text-info">Party Name:</label>
+								<input type="text" id="txtPartyName" class="form-control" />
+							</div>
+							<div class="form-group-sm">
+								<label class="text-info">Party Date:</label>
+								<input type="date" id="txtPartyDate" class="form-control" />
+							</div>
+							<div class="form-group-sm">
+								<label class="text-info">No. Of Guests:</label>
+								<input type="number" id="txtGuestNumber" class="form-control" />
+							</div>
+							<div class="form-group-sm">
+								<label class="text-info">Location:</label>
+								<input type="text" id="txtLocation" class="form-control" />
+							</div><br/>
+							<button type="submit" class="btn btn-default">Save</button>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

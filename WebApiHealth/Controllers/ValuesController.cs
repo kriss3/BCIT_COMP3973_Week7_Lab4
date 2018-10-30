@@ -10,17 +10,26 @@ namespace WebApiHealth.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private string[] Days = { "Mon","Tue", "Wed", "Thu", "Fri", "Sat","Sun" };
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            return new string[] { "value1", "value2" };
+            return Days;
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
+            if (id> -1 && id < Days.Count())
+            {
+                return Days[id];
+            }
+            else{
+                NotFound();
+            }
             return "value";
         }
 
