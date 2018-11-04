@@ -1,9 +1,12 @@
 ﻿$(function () {
 
+	const baseApiUrl = 'https://localhost:44343';
+	const baseClientUrl = 'https://localhost:44378';
+
 	$("#btnGetPartiesTbl").click(getPartiesForTbl);
 	//GET ALL Parties from backend API
 	function getPartiesForTbl() {
-		var url = 'https://localhost:44343/api/parties';
+		var url = baseApiUrl + '/api/parties';
 		$.ajax({
 			contentType: 'application/json',
 			type: 'GET',
@@ -27,11 +30,13 @@
 				$('#party_table').append(party);
 			},
 			error: function (xhr) {
-				alert('Something went wrong, Response: ' + JSON.stringify(xhr));
-				if (xhr.status === 401)
-				{
+				if (xhr.status === 401) {
 					//Call modal login form and fade the backgroud
+					alert('You are NOT Authorezed. Please, Log in.');
 					$("#modalLoginForm").modal("toggle");
+				}
+				else {
+					alert('Alert !!!\nSomething went wrong. Response: ' + JSON.stringify(xhr));
 				}
 			}
 		});
@@ -41,7 +46,7 @@
 	//POST NEW Party to the API
 	$("#postform").submit(function (e) {
 		e.preventDefault();
-		var url = "https://localhost:44343/api/parties";
+		var url = baseApiUrl + '/api/parties';
 		var data = {
 			partyName: $("#txtPartyName").val().trim(),
 			partyDate: $("#txtPartyDate").val().trim(),
@@ -83,7 +88,7 @@
 		alert("About to remove Record with Id: " + id);
 
 		//Call API
-		var url = "https://localhost:44343/api/parties/";
+		var url = baseApiUrl + '/api/parties/';
 		$.ajax({
 			contentType: 'application/json',
 			type: 'DELETE',
@@ -104,17 +109,17 @@
 			Username: $("#txtUserName").val().trim(),		// "ks@ks.ks",
 			Password:  $("#txtPassword").val().trim()		//P@$$w0rd"
 		};
-		var url = 'https://localhost:44343/login';
+		var url = baseApiUrl+'/login';
 		$.ajax({
 			contentType: 'application/json',
 			type: 'POST',
 			url: url,
 			data: JSON.stringify(data),
 			success: function (response) {
-				alert('Success. Your TOKEN is and will expire in 2 min: ' + JSON.stringify(response.token));
+				alert('Success ! Token has been granted and will expire in 2 min.\nYou may now fetch data from API.');
 				myToken = 'Bearer ' + response.token;
 				sessionStorage.setItem("token", myToken);
-				window.location.href = "https://localhost:44378/Parties.html";
+				window.location.href = baseClientUrl + '/Parties.html';
 				
 			},
 			error: function (d) {
