@@ -127,4 +127,31 @@
 			}
 		});
 	}
+
+	//Sign up function
+	$("#btnSignUp").click(signup);
+	function signup() {
+		
+		var data = {
+			Email: $("#txtUserName").val().trim(),		// "ks@ks.ks",
+			Password: $("#txtPassword").val().trim()		//P@$$w0rd"
+		};
+
+		alert('Calling backend to register User: ' + JSON.stringify(data));
+		var url = baseApiUrl + '/register';
+		$.ajax({
+			contentType: 'application/json',
+			type: 'POST',
+			url: url,
+			data: JSON.stringify(data),
+			success: function (response) {
+				alert('Success ! You are now register.\nYou may now LogIn as ' + response.username+' and fetch data from API.');
+				window.location.href = baseClientUrl + '/Parties.html';
+			},
+			error: function (d) {
+				alert("Error fetching data. Response: " + JSON.stringify(d));
+			}
+		});
+	}
+
 });

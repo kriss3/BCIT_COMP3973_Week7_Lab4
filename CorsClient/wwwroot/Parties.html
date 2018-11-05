@@ -76,20 +76,24 @@
 					</div>
 					<div class="modal-body mx-3">
 						<div class="md-form mb-5">
+							<label data-error="wrong" data-success="right" for="txtUserName">User Name/email</label>
 							<i class="fa fa-envelope prefix grey-text"></i>
 							<input type="text" id="txtUserName" class="form-control validate">
-							<label data-error="wrong" data-success="right" for="txtUserName">User Name/email</label>
+
 						</div>
 
 						<div class="md-form mb-4">
+							<label data-error="wrong" data-success="right" for="txtPassword">Your password</label>
 							<i class="fa fa-lock prefix grey-text"></i>
 							<input type="password" id="txtPassword" class="form-control validate">
-							<label data-error="wrong" data-success="right" for="txtPassword">Your password</label>
+
 						</div>
 
 					</div>
 					<div class="modal-footer d-flex justify-content-center">
-						<button id="btnLogin" class="btn btn-default">Login</button>
+						<button id="btnLogin" class="btn btn-default pull-left">Login</button>
+						<label>Not a member yet?</label>
+						<button id="btnSignUp" class="btn btn-default">SignUp</button>
 					</div>
 				</div>
 			</div>
