@@ -2,6 +2,12 @@
 
 	const baseApiUrl = 'https://localhost:44343';
 	const baseClientUrl = 'https://localhost:44378';
+	if (!sessionStorage.getItem("username")) {
+		$('#lblUsername').text(' <NOT AUTHORIZED> ');
+	}
+	else {
+		$('#lblUsername').text(sessionStorage.getItem("username"));
+	}
 
 	$("#btnGetPartiesTbl").click(getPartiesForTbl);
 	//GET ALL Parties from backend API
@@ -117,10 +123,10 @@
 			data: JSON.stringify(data),
 			success: function (response) {
 				alert('Success ! Token has been granted and will expire in 2 min.\nYou may now fetch data from API.');
+				sessionStorage.setItem("username", data.Username);
 				myToken = 'Bearer ' + response.token;
 				sessionStorage.setItem("token", myToken);
 				window.location.href = baseClientUrl + '/Parties.html';
-				
 			},
 			error: function (d) {
 				alert("Error fetching data. Response: " + JSON.stringify(d));
@@ -147,6 +153,7 @@
 			success: function (response) {
 				alert('Success ! You are now register.\nYou may now LogIn as ' + response.username+' and fetch data from API.');
 				window.location.href = baseClientUrl + '/Parties.html';
+				$("lblUsername").text(response.username);
 			},
 			error: function (d) {
 				alert("Error fetching data. Response: " + JSON.stringify(d));

@@ -9,8 +9,14 @@
 	<title>Parties CLIENT</title>
 </head>
 <body>
-	<h3 class="jumbotron">Cors Request - PARTY CONTROLLER and LIST</h3>
-	<hr />
+	<div class="container">
+		<div class="jumbotron">
+			<h3 class="display-4">Cors Request - PARTY CONTROLLER and LIST</h3>
+			<p class="lead">This is a simple WebAPI with HTML client and jQuery script to call API.</p>
+			<hr class="my-4">
+			<label class="label-default">You are logged in as: </label><label class="label-default" id="lblUsername"></label>
+		</div>
+	</div>
 	<div class="container container-fluid">
 		<button id="btnGetPartiesTbl" class="btn btn-default">Get Parties</button>
 		<button id="btnAddPart" class="btn btn-default" data-toggle="modal" data-target="#myModal">New Party</button>
@@ -27,7 +33,7 @@
 			</thead>
 			<tbody></tbody>
 		</table>
-	
+
 		<div id="myModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
 
@@ -54,7 +60,7 @@
 							<div class="form-group-sm">
 								<label class="text-info">Location:</label>
 								<input type="text" id="txtLocation" class="form-control" />
-							</div><br/>
+							</div><br />
 							<button type="submit" class="btn btn-default">Save</button>
 						</form>
 					</div>
@@ -64,7 +70,7 @@
 				</div>
 			</div>
 		</div>
-	
+
 		<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">
