@@ -65,6 +65,7 @@
 			type: 'POST',
 			url: url,
 			data: JSON.stringify(data),
+			headers: { "Authorization": sessionStorage.getItem("token") },
 			success: function (d) {
 				alert("Saved Successfully. You can CLOSE current Window.");
 				$("#postform").trigger("reset");
@@ -99,6 +100,7 @@
 			contentType: 'application/json',
 			type: 'DELETE',
 			url: url + id,
+			headers: { "Authorization": sessionStorage.getItem("token") },
 			success: function (d) {
 				alert("Record with Id: " + d.partyId + " removed succesful. Refresh table.");
 			},
